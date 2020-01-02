@@ -1,0 +1,27 @@
+@startuml
+:git clone https://github.com/TwistTRL/nodejs-twist-api.git;
+:cd nodejs-twist-api/;
+: npm install;
+: npm run docs;
+note right
+generate apidoc documentation
+end note
+split
+  :npm run dev;
+note left
+nodemon
+end note
+split again
+  :npm start;
+note right
+pm2
+end note
+split again
+  :npm test;
+note right
+mocha
+end note
+  stop
+end split
+:web browser twist:3300/api/|
+@enduml
